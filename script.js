@@ -1,17 +1,27 @@
 const body = document.body;
 const switcher = document.querySelector('.lang-switch');
-let language = localStorage.getItem('wedding-language') || 'en';
+const initialLanguage = new URLSearchParams(location.search).get('lang');
+let language = initialLanguage === 'hi' ? 'hi' : 'en';
 
-function setLanguage(lang) {
+function setLanguage(lang, updateUrl = true) {
   language = lang;
   body.classList.toggle('hi', lang === 'hi');
   document.documentElement.lang = lang;
   document.querySelectorAll('[data-en]').forEach(el => { el.textContent = el.dataset[lang]; });
   switcher.querySelectorAll('span').forEach((el, i) => el.classList.toggle('active', (lang === 'en' && i === 0) || (lang === 'hi' && i === 1)));
-  localStorage.setItem('wedding-language', lang);
+  if (updateUrl) {
+    const url = new URL(location.href);
+    url.searchParams.set('lang', lang);
+    history.pushState({ lang }, '', url);
+  }
 }
 switcher.addEventListener('click', () => setLanguage(language === 'en' ? 'hi' : 'en'));
-setLanguage(language);
+setLanguage(language, !['en', 'hi'].includes(initialLanguage));
+
+addEventListener('popstate', () => {
+  const urlLanguage = new URLSearchParams(location.search).get('lang');
+  setLanguage(urlLanguage === 'hi' ? 'hi' : 'en', false);
+});
 
 const music = document.querySelector('#wedding-music');
 const musicToggle = document.querySelector('.music-toggle');

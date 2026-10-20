@@ -8,7 +8,7 @@ html {
   position: sticky;
   top: 0;
   z-index: 0;
-  scroll-snap-align: start;
+  scroll-snap-align: center;
   scroll-snap-stop: always;
 }
 
@@ -29,12 +29,12 @@ main {
 footer {
   position: relative;
   z-index: 3;
-  scroll-snap-align: start;
+  scroll-snap-align: center;
   scroll-snap-stop: always;
 }
 
 main > section {
-  scroll-snap-align: start;
+  scroll-snap-align: center;
   scroll-snap-stop: always;
 }
 
