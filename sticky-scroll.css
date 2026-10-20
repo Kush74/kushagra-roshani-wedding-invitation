@@ -1,8 +1,15 @@
 /* The cover remains pinned while the invitation story rises above it. */
+html {
+  scroll-snap-type: y mandatory;
+  scroll-padding-top: 0;
+}
+
 .hero {
   position: sticky;
   top: 0;
   z-index: 0;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
 }
 
 main {
@@ -22,9 +29,20 @@ main {
 footer {
   position: relative;
   z-index: 3;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+}
+
+main > section {
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
 }
 
 @media (max-width: 520px) {
+  html {
+    scroll-snap-type: y proximity;
+  }
+
   main,
   .intro {
     border-radius: 22px 22px 0 0;
