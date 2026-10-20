@@ -1,0 +1,77 @@
+.floating-countdown {
+  position: fixed;
+  z-index: 19;
+  right: 22px;
+  bottom: 22px;
+  min-height: 48px;
+  padding: 8px 13px;
+  border: 1px solid rgba(173, 122, 53, .48);
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--wine);
+  background: rgba(255, 249, 239, .9);
+  box-shadow: 0 12px 38px rgba(65, 21, 27, .16);
+  backdrop-filter: blur(14px);
+  text-decoration: none;
+  transition: transform .3s ease, box-shadow .3s ease;
+}
+
+.floating-countdown:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 42px rgba(65, 21, 27, .22);
+}
+
+.floating-date {
+  padding-right: 11px;
+  border-right: 1px solid rgba(173, 122, 53, .45);
+  color: var(--gold);
+  font: 600 9px/1 sans-serif;
+  letter-spacing: .14em;
+}
+
+.floating-time {
+  display: grid;
+  grid-template-columns: auto auto 5px auto auto;
+  align-items: baseline;
+  gap: 3px;
+}
+
+.floating-time strong {
+  font: 600 18px/1 var(--serif);
+}
+
+.floating-time small {
+  font: 600 7px/1 sans-serif;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+}
+
+.floating-time i {
+  color: var(--gold);
+  font-style: normal;
+}
+
+body.hi .floating-time small {
+  font-family: var(--dev);
+  text-transform: none;
+}
+
+@media (max-width: 520px) {
+  .floating-countdown {
+    right: 50%;
+    bottom: max(12px, env(safe-area-inset-bottom));
+    transform: translateX(50%);
+    min-height: 44px;
+    padding: 7px 12px;
+  }
+
+  .floating-countdown:hover {
+    transform: translateX(50%) translateY(-2px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .floating-countdown { transition: none; }
+}

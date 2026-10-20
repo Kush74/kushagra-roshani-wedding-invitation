@@ -1,0 +1,136 @@
+.music-toggle {
+  position: fixed;
+  z-index: 20;
+  top: 22px;
+  left: 22px;
+  min-height: 40px;
+  border: 1px solid rgba(173, 122, 53, .45);
+  border-radius: 999px;
+  padding: 8px 14px 8px 10px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--wine);
+  background: rgba(255, 249, 239, .84);
+  box-shadow: 0 8px 30px #6f172512;
+  backdrop-filter: blur(12px);
+  cursor: pointer;
+  font: 600 10px/1 sans-serif;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+}
+
+.welcome-gate {
+  position: fixed;
+  z-index: 100;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  background: radial-gradient(circle at 50% 40%, #fffdf8 0 18%, #f8e7df 72%, #eac7b9);
+  transition: opacity .65s ease, visibility .65s ease;
+}
+
+.welcome-gate[hidden] { display: none; }
+
+.welcome-gate.is-closing {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.welcome-button {
+  width: min(84vw, 430px);
+  aspect-ratio: 1;
+  border: 1px solid rgba(173, 122, 53, .5);
+  border-radius: 50%;
+  color: var(--wine);
+  background: rgba(255, 249, 239, .72);
+  box-shadow: 0 30px 90px #711a2920, inset 0 0 0 14px #fff9ef80;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.welcome-button::before,
+.welcome-button::after {
+  content: "✦";
+  color: var(--gold);
+  font-size: 12px;
+}
+
+.welcome-om {
+  color: var(--gold);
+  font: 600 52px var(--dev);
+  margin-bottom: 4px;
+}
+
+.welcome-button strong {
+  font: 500 clamp(26px, 6vw, 38px) var(--serif);
+}
+
+.welcome-button small {
+  max-width: 220px;
+  font: 600 10px/1.5 sans-serif;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+}
+
+body.hi .welcome-button strong {
+  font-family: "Noto Serif Devanagari", var(--dev);
+}
+
+body.hi .welcome-button small {
+  font-family: var(--dev);
+  letter-spacing: .03em;
+  text-transform: none;
+}
+
+.music-icon {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  color: var(--ivory);
+  background: var(--wine);
+  font-size: 15px;
+  animation: music-pulse 2.2s ease-in-out infinite;
+}
+
+.music-toggle.is-paused .music-icon {
+  animation: none;
+  opacity: .6;
+}
+
+body.hi .music-toggle {
+  font-family: var(--dev);
+  letter-spacing: .04em;
+  text-transform: none;
+}
+
+@keyframes music-pulse {
+  50% { transform: scale(1.1); box-shadow: 0 0 0 6px #711a2912; }
+}
+
+@media (max-width: 520px) {
+  .music-toggle {
+    top: 14px;
+    left: 14px;
+    padding-right: 10px;
+  }
+
+  .music-label {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .music-icon { animation: none; }
+}

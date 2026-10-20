@@ -1,0 +1,103 @@
+body.hi .hero h1,
+body.hi footer h2 {
+  font-family: "Noto Serif Devanagari", var(--dev);
+  font-weight: 600;
+  line-height: 1.22;
+}
+
+body.hi .hero h1 {
+  font-size: clamp(52px, 9vw, 104px);
+  margin-block: 30px;
+}
+
+body.hi footer h2 {
+  font-size: 44px;
+}
+
+body.hi .hero h1 b,
+body.hi footer h2 b {
+  font-family: "Noto Serif Devanagari", var(--dev);
+  font-size: .38em;
+  color: var(--gold);
+}
+
+body.hi .blessing,
+body.hi .invite,
+body.hi .body-copy,
+body.hi .countdown-inner > p,
+body.hi footer p {
+  font-style: normal;
+  line-height: 1.8;
+}
+
+body.hi .eyebrow,
+body.hi .kicker,
+body.hi .section-heading > span,
+body.hi .couple span,
+body.hi .venue small,
+body.hi .venue a,
+body.hi #countdown span,
+body.hi .scroll-cue {
+  font-family: var(--dev);
+  letter-spacing: .06em;
+  text-transform: none;
+}
+
+body.hi .intro h2,
+body.hi .section-heading h2,
+body.hi .venue h3,
+body.hi .event-detail h3,
+body.hi .couple strong {
+  font-family: "Noto Serif Devanagari", var(--dev);
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+body.hi .intro h2,
+body.hi .section-heading h2 {
+  font-size: clamp(36px, 5.5vw, 66px);
+}
+
+body.hi .invite {
+  max-width: 680px;
+  margin-inline: auto;
+}
+
+body.hi .date-lockup strong {
+  font-family: "Noto Serif Devanagari", var(--dev);
+}
+
+body.hi .date-lockup small,
+body.hi .event-detail p {
+  font-family: var(--dev);
+  letter-spacing: .04em;
+  text-transform: none;
+}
+
+body.hi .event-detail h3 {
+  font-size: 21px;
+}
+
+body.hi .venue p {
+  line-height: 1.8;
+}
+
+@media (max-width: 520px) {
+  body.hi .hero h1 span {
+    display: inline-block;
+  }
+
+  body.hi .hero h1 b {
+    display: inline-block;
+    margin: 0 .12em;
+  }
+
+  body.hi .hero h1 {
+    font-size: 43px;
+  }
+
+  body.hi .invite {
+    font-size: 16px;
+    padding-inline: 8px;
+  }
+}

@@ -1,0 +1,69 @@
+.venue {
+  padding-bottom: 42px;
+}
+
+.venue-qr {
+  position: absolute;
+  right: 28px;
+  bottom: 28px;
+  width: 92px;
+  margin: 0;
+  padding: 8px;
+  border: 1px solid rgba(173, 122, 53, .35);
+  border-radius: 4px;
+  background: #fffdf8;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  text-decoration: none;
+  box-shadow: 0 10px 28px #711a2912;
+  transition: transform .3s ease, box-shadow .3s ease;
+}
+
+.venue-qr:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 32px #711a2920;
+}
+
+.venue-qr img {
+  display: block;
+  width: 76px;
+  height: 76px;
+}
+
+.venue-qr span {
+  color: var(--wine);
+  font: 600 7px/1.25 sans-serif;
+  letter-spacing: .08em;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+body.hi .venue-qr span {
+  font-family: var(--dev);
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+@media (max-width: 620px) {
+  .venue {
+    padding-bottom: 38px;
+  }
+
+  .venue-qr {
+    position: static;
+    width: 118px;
+    margin: 28px auto 0;
+    padding: 10px;
+  }
+
+  .venue-qr img {
+    width: 96px;
+    height: 96px;
+  }
+
+  .venue-qr span {
+    font-size: 8px;
+  }
+}
