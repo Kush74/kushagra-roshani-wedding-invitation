@@ -1,0 +1,122 @@
+.hero,
+.intro,
+.venues,
+.countdown,
+.gallery {
+  position: relative;
+}
+
+.section-next {
+  position: absolute;
+  z-index: 4;
+  right: 7vw;
+  bottom: 20px;
+  left: 7vw;
+  min-height: 54px;
+  border-top: 1px solid rgba(173, 122, 53, .32);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  color: var(--wine);
+  text-decoration: none;
+  font: 600 10px/1 sans-serif;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  transition: color .25s ease, background .25s ease;
+}
+
+.section-next b {
+  color: var(--gold);
+  font-size: 18px;
+  line-height: 1;
+  animation: bob 1.8s infinite;
+}
+
+.section-next:hover,
+.section-next:focus-visible {
+  background: rgba(173, 122, 53, .055);
+}
+
+.hero-next {
+  bottom: 18px;
+}
+
+.section-next-light {
+  color: var(--ivory);
+  border-top-color: rgba(232, 201, 158, .3);
+}
+
+.section-next-light:hover,
+.section-next-light:focus-visible {
+  background: rgba(255, 255, 255, .06);
+}
+
+.countdown-inner {
+  padding-bottom: 112px;
+}
+
+body.hi .section-next {
+  font-family: var(--dev);
+  letter-spacing: .05em;
+  text-transform: none;
+}
+
+@media (max-width: 850px) {
+  .intro,
+  .venues,
+  .gallery {
+    padding-bottom: 110px;
+  }
+
+  .section-next {
+    right: 22px;
+    bottom: 16px;
+    left: 22px;
+    min-height: 50px;
+  }
+
+  .hero-next {
+    bottom: 14px;
+  }
+
+  .section-next.is-active-nav,
+  .event-next.is-active-nav,
+  .venue > .venue-next.is-active-nav {
+    position: fixed;
+    z-index: 18;
+    right: 22px;
+    bottom: max(14px, env(safe-area-inset-bottom));
+    left: 22px;
+    min-height: 50px;
+    border: 1px solid rgba(173, 122, 53, .46);
+    border-radius: 999px;
+    color: var(--wine);
+    background: rgba(255, 249, 239, .96);
+    box-shadow: 0 12px 38px rgba(65, 21, 27, .2);
+    backdrop-filter: blur(14px);
+  }
+
+  .section-next.is-active-nav:hover,
+  .section-next.is-active-nav:focus-visible,
+  .event-next.is-active-nav:hover,
+  .event-next.is-active-nav:focus-visible,
+  .venue > .venue-next.is-active-nav:hover,
+  .venue > .venue-next.is-active-nav:focus-visible {
+    color: var(--wine);
+    background: #fff9ef;
+  }
+
+  .event-card:has(> .event-next.is-active-nav) {
+    transform: none !important;
+  }
+
+  .event-card.featured > .event-next.is-active-nav {
+    color: var(--wine);
+    background: rgba(255, 249, 239, .96);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .section-next b { animation: none; }
+}

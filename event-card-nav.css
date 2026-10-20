@@ -1,0 +1,113 @@
+.event-card {
+  position: relative;
+  padding-bottom: 78px;
+}
+
+.event-next {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  min-height: 58px;
+  padding: 12px 24px;
+  border-top: 1px solid rgba(232, 201, 158, .25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  color: #e9c48f;
+  background: rgba(255, 255, 255, .035);
+  text-decoration: none;
+  font: 600 10px/1 sans-serif;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  transition: background .25s ease, color .25s ease;
+}
+
+.event-next b {
+  font-size: 18px;
+  line-height: 1;
+  animation: bob 1.8s infinite;
+}
+
+.event-next:hover,
+.event-next:focus-visible {
+  color: #fff9ef;
+  background: rgba(255, 255, 255, .09);
+}
+
+.event-card.featured .event-next {
+  border-top-color: rgba(173, 122, 53, .28);
+  color: var(--wine);
+  background: rgba(173, 122, 53, .055);
+}
+
+.event-card.featured .event-next:hover,
+.event-card.featured .event-next:focus-visible {
+  background: rgba(173, 122, 53, .13);
+}
+
+body.hi .event-next {
+  font-family: var(--dev);
+  letter-spacing: .05em;
+  text-transform: none;
+}
+
+@media (max-width: 520px) {
+  .event-card {
+    padding-bottom: 68px;
+  }
+
+  .event-next {
+    min-height: 52px;
+    padding: 10px 18px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .event-next b { animation: none; }
+}
+
+.venue {
+  padding-bottom: 94px;
+}
+
+.venue > .venue-next {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  min-height: 58px;
+  margin: 0;
+  padding: 12px 24px;
+  border: 0;
+  border-top: 1px solid rgba(173, 122, 53, .28);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  color: var(--wine);
+  background: rgba(173, 122, 53, .055);
+  text-decoration: none;
+  font: 600 10px/1 sans-serif;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+}
+
+.venue > .venue-next b {
+  color: var(--gold);
+  font-size: 18px;
+  animation: bob 1.8s infinite;
+}
+
+body.hi .venue > .venue-next {
+  font-family: var(--dev);
+  letter-spacing: .05em;
+  text-transform: none;
+}
+
+@media (max-width: 620px) {
+  .venue {
+    padding-bottom: 76px;
+  }
+}

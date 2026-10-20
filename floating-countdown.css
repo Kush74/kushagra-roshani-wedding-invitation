@@ -58,17 +58,19 @@ body.hi .floating-time small {
   text-transform: none;
 }
 
-@media (max-width: 520px) {
+@media (max-width: 850px) {
   .floating-countdown {
-    right: 50%;
-    bottom: max(12px, env(safe-area-inset-bottom));
-    transform: translateX(50%);
+    top: max(14px, env(safe-area-inset-top));
+    right: auto;
+    bottom: auto;
+    left: 50%;
+    transform: translateX(-50%);
     min-height: 44px;
     padding: 7px 12px;
   }
 
   .floating-countdown:hover {
-    transform: translateX(50%) translateY(-2px);
+    transform: translateX(-50%) translateY(-2px);
   }
 }
 

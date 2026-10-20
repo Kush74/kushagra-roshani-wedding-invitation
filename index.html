@@ -3,6 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="only light">
   <meta name="theme-color" content="#6f1725">
   <meta name="description" content="Wedding invitation of Kushagra and Roshani — 24 November 2026">
   <meta property="og:title" content="Kushagra & Roshani — Wedding Invitation">
@@ -12,18 +13,22 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Great+Vibes&family=Noto+Sans+Devanagari:wght@300;400;500;600&family=Noto+Serif+Devanagari:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="hi.css">
-  <link rel="stylesheet" href="music.css">
+  <link rel="stylesheet" href="hi.css?v=41">
+  <link rel="stylesheet" href="music.css?v=23">
   <link rel="stylesheet" href="qr.css">
-  <link rel="stylesheet" href="sticky-scroll.css">
-  <link rel="stylesheet" href="floating-countdown.css">
+  <link rel="stylesheet" href="sticky-scroll.css?v=39">
+  <link rel="stylesheet" href="floating-countdown.css?v=38">
+  <link rel="stylesheet" href="emblem.css">
+  <link rel="stylesheet" href="couple-focus.css?v=32">
+  <link rel="stylesheet" href="event-card-nav.css?v=39">
+  <link rel="stylesheet" href="section-nav.css?v=39">
 </head>
 <body>
   <div class="petals" aria-hidden="true"></div>
   <audio id="wedding-music" src="assets/wedding-music.mp3" loop preload="metadata" autoplay></audio>
-  <div class="welcome-gate" hidden>
+  <div class="welcome-gate">
     <button class="welcome-button" type="button">
-      <span class="welcome-om">ॐ</span>
+      <img class="welcome-emblem" src="assets/ganesh-emblem-simple-outline.png" alt="Lord Ganesha emblem">
       <strong data-en="Open invitation" data-hi="आमंत्रण खोलें">Open invitation</strong>
       <small data-en="Tap to begin with music" data-hi="संगीत के साथ आरंभ करने के लिए स्पर्श करें">Tap to begin with music</small>
     </button>
@@ -44,7 +49,7 @@
     <div class="corner corner-left" aria-hidden="true">❀</div>
     <div class="corner corner-right" aria-hidden="true">❀</div>
     <div class="hero-content reveal">
-      <div class="ganesha" aria-hidden="true">ॐ</div>
+      <img class="ganesha-emblem" src="assets/ganesh-emblem-simple-outline.png" alt="Lord Ganesha emblem">
       <p class="blessing" data-en="With the blessings of Lord Ganesha" data-hi="श्री गणेशाय नमः">With the blessings of Lord Ganesha</p>
       <p class="eyebrow" data-en="Together with their families" data-hi="स्नेहाशीष एवं सादर आमंत्रण">Together with their families</p>
       <h1><span data-en="Kushagra" data-hi="कुशाग्र">Kushagra</span><b data-en="&" data-hi="संग">&</b><span data-en="Roshani" data-hi="रोशनी">Roshani</span></h1>
@@ -53,8 +58,8 @@
         <span>24</span>
         <div><small data-en="Tuesday" data-hi="मंगलवार">Tuesday</small><strong data-en="November" data-hi="नवंबर">November</strong><small>2026</small></div>
       </div>
-      <a class="scroll-cue" href="#story"><span data-en="Open invitation" data-hi="आमंत्रण देखें">Open invitation</span><b>↓</b></a>
     </div>
+    <a class="section-next hero-next" href="#story"><span data-en="Continue to our story" data-hi="हमारी कहानी देखें">Continue to our story</span><b aria-hidden="true">↓</b></a>
   </header>
 
   <main>
@@ -68,6 +73,7 @@
         <b>∞</b>
         <div><span data-en="Bride" data-hi="वधू">Bride</span><strong data-en="Roshani" data-hi="रोशनी">Roshani</strong></div>
       </div>
+      <a class="section-next" href="#event-23"><span data-en="View wedding events" data-hi="विवाह कार्यक्रम देखें">View wedding events</span><b aria-hidden="true">↓</b></a>
     </section>
 
     <section class="events" id="events">
@@ -76,7 +82,7 @@
         <h2 data-en="Save the dates" data-hi="शुभ कार्यक्रम">Save the dates</h2>
       </div>
       <div class="event-grid">
-        <article class="event-card reveal">
+        <article class="event-card reveal" id="event-23">
           <div class="day"><span>23</span><small>NOV</small></div>
           <div class="event-detail">
             <h3 data-en="Mandap Ceremony" data-hi="मंडपाच्छादन">Mandap Ceremony</h3>
@@ -86,8 +92,9 @@
             <h3 data-en="Musical Evening" data-hi="संगीत संध्या">Musical Evening</h3>
             <p><time data-en="6:00 PM" data-hi="शाम 6:00 बजे">6:00 PM</time></p>
           </div>
+          <a class="event-next" href="#event-24"><span data-en="Next date" data-hi="अगली तारीख">Next date</span><b aria-hidden="true">↓</b></a>
         </article>
-        <article class="event-card featured reveal">
+        <article class="event-card featured reveal" id="event-24">
           <div class="day"><span>24</span><small>NOV</small></div>
           <div class="event-detail">
             <h3 data-en="Haldi Ceremony" data-hi="हल्दी (अहेर प्रथा बंद)">Haldi Ceremony</h3>
@@ -97,13 +104,15 @@
             <h3 data-en="Wedding Ceremony" data-hi="पाणिग्रहण संस्कार">Wedding Ceremony</h3>
             <p><time data-en="8:40 PM" data-hi="रात्रि 8:40 बजे">8:40 PM</time></p>
           </div>
+          <a class="event-next" href="#event-25"><span data-en="Next date" data-hi="अगली तारीख">Next date</span><b aria-hidden="true">↓</b></a>
         </article>
-        <article class="event-card reveal">
+        <article class="event-card reveal" id="event-25">
           <div class="day"><span>25</span><small>NOV</small></div>
           <div class="event-detail single">
             <h3 data-en="Blessing Ceremony & Reception" data-hi="आशीर्वाद समारोह एवं स्वरुचिभोज">Blessing Ceremony & Reception</h3>
             <p data-en="From 7:30 PM onwards" data-hi="शाम 7:30 बजे से आपके आगमन तक">From 7:30 PM onwards</p>
           </div>
+          <a class="event-next" href="#venues"><span data-en="Continue to venues" data-hi="आयोजन स्थल देखें">Continue to venues</span><b aria-hidden="true">↓</b></a>
         </article>
       </div>
     </section>
@@ -114,7 +123,7 @@
         <h2 data-en="Celebration venues" data-hi="आयोजन स्थल">Celebration venues</h2>
       </div>
       <div class="venue-grid">
-        <article class="venue reveal">
+        <article class="venue reveal" id="wedding-venue">
           <span class="venue-no">01</span>
           <small data-en="Wedding · 24 November" data-hi="विवाह · 24 नवंबर">Wedding · 24 November</small>
           <h3 data-en="Shri Ram Resort" data-hi="श्री राम रिसॉर्ट">Shri Ram Resort</h3>
@@ -124,8 +133,9 @@
             <img src="assets/qr-wedding-venue.svg" alt="QR code for Shri Ram Resort location" loading="lazy">
             <span data-en="Scan for location" data-hi="स्थान के लिए स्कैन करें">Scan for location</span>
           </a>
+          <a class="venue-next" href="#reception-venue"><span data-en="Next venue" data-hi="अगला आयोजन स्थल">Next venue</span><b aria-hidden="true">↓</b></a>
         </article>
-        <article class="venue reveal">
+        <article class="venue reveal" id="reception-venue">
           <span class="venue-no">02</span>
           <small data-en="Reception · 25 November" data-hi="आशीर्वाद समारोह · 25 नवंबर">Reception · 25 November</small>
           <h3 data-en="Dastur Marriage Lawn" data-hi="दस्तूर मैरिज लॉन">Dastur Marriage Lawn</h3>
@@ -135,11 +145,12 @@
             <img src="assets/qr-reception-venue.svg" alt="QR code for Dastur Marriage Lawn location" loading="lazy">
             <span data-en="Scan for location" data-hi="स्थान के लिए स्कैन करें">Scan for location</span>
           </a>
+          <a class="venue-next" href="#wedding-countdown"><span data-en="View the countdown" data-hi="शुभ मिलन की उलटी गिनती देखें">View the countdown</span><b aria-hidden="true">↓</b></a>
         </article>
       </div>
     </section>
 
-    <section class="countdown">
+    <section class="countdown" id="wedding-countdown">
       <div class="countdown-inner reveal">
         <p data-en="Counting down to forever" data-hi="शुभ मिलन की प्रतीक्षा">Counting down to forever</p>
         <div id="countdown" aria-live="polite">
@@ -149,9 +160,10 @@
           <div><strong>00</strong><span data-en="Seconds" data-hi="सेकंड">Seconds</span></div>
         </div>
       </div>
+      <a class="section-next section-next-light" href="#invitation-gallery"><span data-en="View original invitation" data-hi="मूल आमंत्रण पत्रिका देखें">View original invitation</span><b aria-hidden="true">↓</b></a>
     </section>
 
-    <section class="gallery">
+    <section class="gallery" id="invitation-gallery">
       <div class="section-heading reveal">
         <span data-en="With love" data-hi="सप्रेम">With love</span>
         <h2 data-en="The original invitation" data-hi="मूल आमंत्रण पत्रिका">The original invitation</h2>
@@ -166,15 +178,16 @@
         </div>
         <button type="button" class="gallery-next" aria-label="Next card">→</button>
       </div>
+      <a class="section-next" href="#final-message"><span data-en="Continue to our message" data-hi="हमारा संदेश देखें">Continue to our message</span><b aria-hidden="true">↓</b></a>
     </section>
   </main>
 
-  <footer>
+  <footer id="final-message">
     <div class="flourish">❦</div>
     <p data-en="Your presence is our most precious gift" data-hi="आपकी उपस्थिति ही हमारा सबसे अनमोल उपहार है">Your presence is our most precious gift</p>
     <h2><span data-en="Kushagra" data-hi="कुशाग्र">Kushagra</span> <b data-en="&" data-hi="संग">&</b> <span data-en="Roshani" data-hi="रोशनी">Roshani</span></h2>
     <small>24 · 11 · 2026</small>
   </footer>
-  <script src="script.js?v=12"></script>
+  <script src="script.js?v=39"></script>
 </body>
 </html>

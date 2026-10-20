@@ -27,9 +27,26 @@
   display: grid;
   place-items: center;
   padding: 24px;
-  background: radial-gradient(circle at 50% 40%, #fffdf8 0 18%, #f8e7df 72%, #eac7b9);
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 50% 42%, #fffdf8 0 17%, #f8e7df 58%, #eac7b9),
+    repeating-linear-gradient(45deg, #fff9ef 0 28px, #f6eadb 29px 30px);
   transition: opacity .65s ease, visibility .65s ease;
 }
+
+.welcome-gate::before,
+.welcome-gate::after {
+  content: "❧";
+  position: absolute;
+  z-index: 0;
+  color: rgba(173,122,53,.16);
+  font-size: clamp(150px, 30vw, 360px);
+  line-height: 1;
+  pointer-events: none;
+}
+
+.welcome-gate::before { left: -4vw; bottom: -5vw; transform: rotate(20deg); }
+.welcome-gate::after { right: -4vw; top: -5vw; transform: rotate(200deg); }
 
 .welcome-gate[hidden] { display: none; }
 
@@ -39,6 +56,8 @@
 }
 
 .welcome-button {
+  position: relative;
+  z-index: 2;
   width: min(84vw, 430px);
   aspect-ratio: 1;
   border: 1px solid rgba(173, 122, 53, .5);
@@ -52,6 +71,13 @@
   justify-content: center;
   gap: 10px;
   cursor: pointer;
+  transition: opacity .35s ease, transform .45s cubic-bezier(.2,.8,.2,1);
+}
+
+.welcome-gate.is-closing .welcome-button {
+  opacity: 0;
+  transform: scale(.92);
+  pointer-events: none;
 }
 
 .welcome-button::before,

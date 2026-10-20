@@ -1,0 +1,55 @@
+.couple {
+  max-width: 780px;
+}
+
+.couple > div {
+  min-width: 220px;
+}
+
+.couple span {
+  color: var(--gold);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.couple strong {
+  margin-top: 7px;
+  color: var(--wine);
+  font-size: clamp(46px, 5vw, 58px);
+}
+
+.couple > b {
+  color: var(--gold);
+  font-size: 38px;
+  text-shadow: 0 5px 18px rgba(173, 122, 53, .2);
+}
+
+body.hi .couple span {
+  font-family: "Noto Serif Devanagari", var(--dev);
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: .04em;
+}
+
+body.hi .couple strong {
+  font-size: clamp(36px, 4.2vw, 46px);
+  font-weight: 700;
+}
+
+@media (max-width: 520px) {
+  .couple {
+    gap: 16px;
+  }
+
+  .couple > div {
+    min-width: 0;
+  }
+
+  body.hi .couple strong {
+    font-size: 32px;
+  }
+
+  .couple > b {
+    font-size: 32px;
+  }
+}

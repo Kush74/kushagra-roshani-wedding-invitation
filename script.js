@@ -27,6 +27,7 @@ const music = document.querySelector('#wedding-music');
 const musicToggle = document.querySelector('.music-toggle');
 const welcomeGate = document.querySelector('.welcome-gate');
 const welcomeButton = document.querySelector('.welcome-button');
+let invitationOpened = false;
 music.volume = 0.16;
 
 function syncMusicButton() {
@@ -39,14 +40,14 @@ function syncMusicButton() {
 async function startMusic() {
   try {
     await music.play();
-    welcomeGate.hidden = true;
   } catch (_) {
-    welcomeGate.hidden = false;
+    if (!invitationOpened) welcomeGate.hidden = false;
   }
   syncMusicButton();
 }
 
 welcomeButton.addEventListener('click', async () => {
+  invitationOpened = true;
   try { await music.play(); } catch (_) { /* The fixed music button remains available. */ }
   welcomeGate.classList.add('is-closing');
   setTimeout(() => { welcomeGate.hidden = true; }, 650);
@@ -102,3 +103,38 @@ if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
     setTimeout(() => petal.remove(), 14000);
   }, 900);
 }
+
+const navigablePanels = [...document.querySelectorAll('.hero, .intro, .event-card, .venue, .countdown, .gallery, footer')];
+let navFrame;
+
+function keepCurrentNavigationVisible() {
+  cancelAnimationFrame(navFrame);
+  navFrame = requestAnimationFrame(() => {
+    const viewportTop = 70;
+    const viewportBottom = innerHeight;
+    let currentPanel = null;
+    let largestVisibleArea = 0;
+
+    navigablePanels.forEach(panel => {
+      const rect = panel.getBoundingClientRect();
+      const visibleArea = Math.max(0, Math.min(rect.bottom, viewportBottom) - Math.max(rect.top, viewportTop));
+      if (visibleArea > largestVisibleArea) {
+        largestVisibleArea = visibleArea;
+        currentPanel = panel;
+      }
+    });
+
+    document.querySelectorAll('.section-next.is-active-nav, .event-next.is-active-nav, .venue-next.is-active-nav')
+      .forEach(link => link.classList.remove('is-active-nav'));
+
+    if (innerWidth <= 850 && currentPanel) {
+      const nextLink = currentPanel.querySelector(':scope > .section-next, :scope > .event-next, :scope > .venue-next');
+      if (nextLink) nextLink.classList.add('is-active-nav');
+    }
+  });
+}
+
+addEventListener('scroll', keepCurrentNavigationVisible, { passive: true });
+addEventListener('resize', keepCurrentNavigationVisible);
+addEventListener('hashchange', keepCurrentNavigationVisible);
+keepCurrentNavigationVisible();

@@ -1,0 +1,25 @@
+.ganesha-emblem {
+  display: block;
+  width: clamp(92px, 11vw, 132px);
+  height: auto;
+  margin: 0 auto 4px;
+  filter: drop-shadow(0 5px 8px rgba(155, 108, 40, .16));
+}
+
+.welcome-emblem {
+  display: block;
+  width: clamp(76px, 14vw, 96px);
+  height: auto;
+  margin-bottom: 4px;
+  filter: drop-shadow(0 5px 9px rgba(155, 108, 40, .14));
+}
+
+@media (max-width: 520px) {
+  .ganesha-emblem {
+    width: 96px;
+  }
+
+  .welcome-emblem {
+    width: 82px;
+  }
+}

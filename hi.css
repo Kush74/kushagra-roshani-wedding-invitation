@@ -82,14 +82,25 @@ body.hi .venue p {
   line-height: 1.8;
 }
 
-@media (max-width: 520px) {
-  body.hi .hero h1 span {
-    display: inline-block;
+@media (max-width: 850px) {
+  body.hi .hero h1 span,
+  body.hi .hero h1 b {
+    display: block;
   }
 
   body.hi .hero h1 b {
-    display: inline-block;
-    margin: 0 .12em;
+    margin: .12em 0;
+  }
+}
+
+@media (max-width: 520px) {
+  body.hi .hero h1 span {
+    display: block;
+  }
+
+  body.hi .hero h1 b {
+    display: block;
+    margin: .12em 0;
   }
 
   body.hi .hero h1 {
@@ -101,3 +112,7 @@ body.hi .venue p {
     padding-inline: 8px;
   }
 }
+html {
+  color-scheme: only light;
+}
+

@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 240" role="img" aria-labelledby="title desc">
+  <title id="title">Lord Ganesha emblem</title>
+  <desc id="desc">An original ornamental line illustration of Lord Ganesha in antique gold.</desc>
+  <g fill="none" stroke="#ad7a35" stroke-linecap="round" stroke-linejoin="round">
+    <path stroke-width="4" d="M110 24c-13 10-21 23-21 37 0 11 6 19 21 27 15-8 21-16 21-27 0-14-8-27-21-37Z"/>
+    <path stroke-width="3" d="M96 47c9-6 19-6 28 0M92 62c12-8 24-8 36 0M110 24V10m-8 5 8-9 8 9"/>
+    <path stroke-width="5" d="M89 78c-21-24-53-19-59 5-5 23 15 43 46 36M131 78c21-24 53-19 59 5 5 23-15 43-46 36"/>
+    <path stroke-width="3" d="M75 88c-15-10-28-1-26 11 2 11 14 16 28 11M145 88c15-10 28-1 26 11-2 11-14 16-28 11"/>
+    <path stroke-width="4" d="M82 79c0 34 10 56 28 66 18-10 28-32 28-66"/>
+    <path stroke-width="4" d="M110 91c-8 17-9 37-3 56 5 17 1 31-12 39 13 3 28-3 35-15 8-15 3-30-12-41"/>
+    <path stroke-width="3" d="M92 104c4-4 9-4 14 0m8 0c5-4 10-4 14 0"/>
+    <circle cx="99" cy="105" r="2.5" fill="#ad7a35" stroke="none"/>
+    <circle cx="121" cy="105" r="2.5" fill="#ad7a35" stroke="none"/>
+    <path stroke-width="3" d="M110 75v11m-5-6h10"/>
+    <path stroke-width="4" d="M76 123c-25 11-39 31-42 59m110-59c25 11 39 31 42 59"/>
+    <path stroke-width="4" d="M83 142c-14 8-23 20-26 37m80-37c14 8 23 20 26 37"/>
+    <path stroke-width="5" d="M57 180c15 11 32 17 53 17s38-6 53-17"/>
+    <path stroke-width="4" d="M73 192c-13 5-22 14-27 27 21-3 38-9 50-19m51-8c13 5 22 14 27 27-21-3-38-9-50-19"/>
+    <path stroke-width="3" d="M92 199c-7 8-10 18-9 30m45-30c7 8 10 18 9 30M68 229h84"/>
+    <circle cx="110" cy="188" r="6"/>
+    <path stroke-width="2" d="M110 182v12m-6-6h12"/>
+  </g>
+</svg>

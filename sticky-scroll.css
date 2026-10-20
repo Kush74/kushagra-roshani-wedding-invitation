@@ -38,11 +38,74 @@ main > section {
   scroll-snap-stop: always;
 }
 
-@media (max-width: 520px) {
-  html {
-    scroll-snap-type: y proximity;
+/* Each date becomes its own centered reading stop inside the festivities. */
+.events {
+  scroll-snap-align: none;
+  scroll-snap-stop: normal;
+}
+
+.event-card {
+  min-height: calc(100svh - 88px);
+}
+
+@media (min-width: 851px) {
+  .event-grid {
+    grid-template-columns: minmax(0, 780px);
+    justify-content: center;
+    gap: 24px;
   }
 
+  .event-card,
+  .event-card.featured {
+    width: 100%;
+    min-height: calc(100svh - 88px);
+    align-items: center;
+    transform: none;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+    scroll-margin-top: 72px;
+  }
+
+  .event-card:hover,
+  .event-card.featured:hover {
+    transform: translateY(-8px);
+  }
+}
+
+@media (max-width: 850px) {
+  html {
+    scroll-snap-type: none;
+  }
+
+  .hero,
+  main > section,
+  footer,
+  .event-card {
+    scroll-snap-align: none;
+    scroll-snap-stop: normal;
+  }
+
+  .venue {
+    scroll-margin-top: 82px;
+  }
+
+  .event-card {
+    min-height: max(360px, calc(72svh - 60px));
+    scroll-margin-top: 82px;
+  }
+
+  main > section,
+  footer {
+    scroll-margin-top: 82px;
+  }
+
+  .event-card:last-child .event-detail.single {
+    justify-content: flex-start;
+    padding-top: 4px;
+  }
+}
+
+@media (max-width: 520px) {
   main,
   .intro {
     border-radius: 22px 22px 0 0;
