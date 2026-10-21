@@ -49,26 +49,53 @@ main > section {
 }
 
 @media (min-width: 851px) {
+  .events {
+    scroll-snap-align: center;
+    scroll-snap-stop: always;
+  }
+
   .event-grid {
-    grid-template-columns: minmax(0, 780px);
-    justify-content: center;
-    gap: 24px;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    justify-content: stretch;
+    gap: 18px;
   }
 
   .event-card,
   .event-card.featured {
     width: 100%;
-    min-height: calc(100svh - 88px);
-    align-items: center;
-    transform: none;
-    scroll-snap-align: start;
-    scroll-snap-stop: always;
-    scroll-margin-top: 72px;
+    min-height: 410px;
+    align-items: flex-start;
+    scroll-snap-align: none;
+    scroll-snap-stop: normal;
+    scroll-margin-top: 0;
   }
 
-  .event-card:hover,
-  .event-card.featured:hover {
+  .event-card.featured {
+    transform: translateY(-18px);
+  }
+
+  .event-card:hover {
     transform: translateY(-8px);
+  }
+
+  .event-card.featured:hover {
+    transform: translateY(-26px);
+  }
+}
+
+@media (min-width: 851px) and (max-width: 1100px) {
+  .event-card,
+  .event-card.featured {
+    padding: 32px 24px 78px;
+    gap: 18px;
+  }
+
+  .event-card .day span {
+    font-size: 50px;
+  }
+
+  .event-card .event-detail h3 {
+    font-size: 20px;
   }
 }
 
